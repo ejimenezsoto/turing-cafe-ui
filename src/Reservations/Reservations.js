@@ -1,6 +1,7 @@
 import React from 'react'
 import { deleteReservation } from '../apiCalls';
 import Card from '../Card/Card';
+import './Reservations.css'
 
 const Reservations = ({reservations,deleteCard}) => {
 

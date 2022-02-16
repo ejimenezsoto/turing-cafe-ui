@@ -1,0 +1,16 @@
+
+.reservation-card {
+    background-color: white;
+    border: solid teal 2px;
+    padding: 1em;
+    color: teal;
+}
+
+h4{
+    font-size: 1em;
+}
+
+button{
+    background-color: teal;
+    color:white;
+}
