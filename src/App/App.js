@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { fetchReservations,postReservation,deleteReservation } from '../apiCalls';
+import Reservations from '../Reservations/Reservations';
 import Form from '../Form/Form';
 import './App.css';
 
@@ -9,6 +11,10 @@ class App extends Component {
       reservations: [],
     }
   }
+  componentDidMount(){
+    fetchReservations().then(allReservations => this.setState({reservations: allReservations}))
+    .catch(err => err.message)
+  }
   render() {
     return (
       <div className="App">
@@ -17,7 +23,9 @@ class App extends Component {
       <Form />
         </div>
         <div className='resy-container'>
-          
+          <Reservations 
+            reservations={this.state.reservations}
+          />
         </div>
       </div>
     )
