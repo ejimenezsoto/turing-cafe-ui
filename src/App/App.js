@@ -15,6 +15,12 @@ class App extends Component {
     fetchReservations().then(allReservations => this.setState({reservations: allReservations}))
     .catch(err => err.message)
   }
+
+  deleteCard = (id) => {
+    deleteReservation(id)
+    .then(deleteRes => this.componentDidMount())
+    .catch(err => err)
+  }
   render() {
     return (
       <div className="App">
@@ -25,6 +31,7 @@ class App extends Component {
         <div className='resy-container'>
           <Reservations 
             reservations={this.state.reservations}
+            deleteCard={this.deleteCard}
           />
         </div>
       </div>

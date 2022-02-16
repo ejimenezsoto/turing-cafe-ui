@@ -1,7 +1,8 @@
 import React from 'react'
+import { deleteReservation } from '../apiCalls';
 import Card from '../Card/Card';
 
-const Reservations = ({reservations}) => {
+const Reservations = ({reservations,deleteCard}) => {
 
     const reservationCards = reservations.map(reservation => {
         return (
@@ -11,6 +12,8 @@ const Reservations = ({reservations}) => {
                 date={reservation.date}
                 time={reservation.time}
                 number={reservation.number}
+                deleteCard={deleteCard}
+                key={reservation.id}
             />
         )
     })
